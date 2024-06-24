@@ -1,0 +1,20 @@
+
+<section class="my-5">
+  <p class="mb-1 fs-5">Categories :</p>
+  <select [(ngModel)]="selectedCategory" (change)="handleSelect()" class="form-select text-capitalize shadow-none mb-5" aria-label="Default select example">
+    <option selected>All</option>
+    <option *ngFor="let category of allCategories" [value]="category">{{category}}</option>
+  </select>
+
+  <div *ngIf="finalProducts.length > 0; else emptyProducts" class="row g-5">
+    <div *ngFor="let product of finalProducts.reverse()" class="col-sm-6 col-md-4 col-xl-3">
+      <app-product [product]="product" (clickedProduct)="handleAddToCart($event)"></app-product>
+    </div>
+  </div>
+</section>
+
+<ng-template #emptyProducts>
+  <div class="text-center">
+    <img src="loading.svg" class="img-fluid" alt="">
+  </div>
+</ng-template>

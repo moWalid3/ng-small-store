@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+
+$main-color: #FF9F1C;
+$main-light: #FFBF69;
+$alt-color: #2EC4B6;
+$alt-light: #CBF3F0;
+$alt-hover: #43cabd;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.bg-main {
+  background-color: $main-color !important;
+}
+.bg-main-light {
+  background-color: $main-light !important;
+}
+.bg-alt {
+  background-color: $alt-color !important;
+}
+.bg-alt-light {
+  background-color: $alt-light !important;
+}
+.text-main {
+  color: $main-color !important;
+}
+.text-alt {
+  color: $alt-color !important;
+}
+.text-alt-light {
+  color: $alt-light !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.btn-main {
+  background-color: $alt-color !important;
+  color: white !important;
+  font-weight: 500 !important;
+  font-size: 17px !important;
+  transition: .2s !important;
+  &:hover {
+    background-color: $alt-hover !important;
+  }
+}
+
+.product {
+  transition: .2s;
+  &:hover {
+    box-shadow: 0 0 3px $alt-color !important;
+    transform: scale(1.05);
+  }
+}
+
+.controls-btn {
+  border-color: $main-color !important;
+  color: $main-color !important;
+}

@@ -1,0 +1,22 @@
+<section class="my-5">
+  <div class="row align-items-center row-gap-5 gx-md-5">
+    <div class="col-md-6 text-center">
+      <img [src]="product.image" height="500" class="w-100" [alt]="product.title">
+    </div>
+    <div class="col-md-6">
+      <h3 class="text-main fw-bold mb-1">{{product.title}}</h3>
+      <h5 class="text-alt fw-bold mb-2">{{product.category}}</h5>
+      <p class="text-muted mb-2">{{product.description}}</p>
+      <div class="fs-5 mb-2">
+        <i *ngFor="let i of [1, 2, 3, 4, 5]" 
+          [ngClass]="{'fa-solid': product.rating.rate >= i, 'fa-regular': product.rating.rate < i}" 
+          class="fa-star text-warning"
+        ></i>
+        <span class="ps-1 pe-3 border-end">{{product.rating.rate}}</span>
+        <span class="text-muted ms-3">({{product.rating.count}})</span>
+      </div>
+      <p class="fs-2 text-main">{{product.price|currency}}</p>
+      <button (click)="handleAddToCart()" class="btn btn-main w-100">Add To Cart</button>
+    </div>
+  </div>
+</section>
