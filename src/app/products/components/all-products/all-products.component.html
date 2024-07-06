@@ -7,7 +7,7 @@
   </select>
 
   <div *ngIf="finalProducts.length > 0; else emptyProducts" class="row g-5">
-    <div *ngFor="let product of finalProducts.reverse()" class="col-sm-6 col-md-4 col-xl-3">
+    <div *ngFor="let product of finalProducts" class="col-sm-6 col-md-4 col-xl-3">
       <app-product [product]="product" (clickedProduct)="handleAddToCart($event)"></app-product>
     </div>
   </div>
